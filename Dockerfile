@@ -1,0 +1,8 @@
+FROM openjdk:11
+
+ARG JAR_FILE
+COPY target/${JAR_FILE} /app/service.jar
+
+EXPOSE 8080
+
+ENTRYPOINT ["java","-jar","/app/service.jar"]
